@@ -1,0 +1,14 @@
+baseURL = "http://aidanpieper.com/"
+theme = "hugo-bearblog"
+
+title = "🚲 Aidan Pieper"
+languageCode = "en-us"
+author = "Aidan Pieper"
+copyright = "Copyright © 2021, Aidan Pieper."
+
+enableEmoji = true
+
+[markup]
+  [markup.highlight]
+    style = "github"
+
