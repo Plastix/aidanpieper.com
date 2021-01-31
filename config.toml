@@ -1,14 +1,20 @@
 baseURL = "https://www.aidanpieper.com"
 theme = "hugo-bearblog"
 
+# Basic metadata
 title = "🚲 Aidan Pieper"
-languageCode = "en-us"
 author = "Aidan Pieper"
 copyright = "Copyright © 2021, Aidan Pieper."
+languageCode = "en-us"
 
+# Generate a nice robots.txt for SEO
+enableRobotsTXT = true
 enableEmoji = true
 
 [markup]
   [markup.highlight]
     style = "github"
 
+[params]
+	title = "🚲 Aidan Pieper"
+	description = "Aidan Pieper's blog about software development."
