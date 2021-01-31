@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 🚲 Aidan Pieper</title>
-    <link>www.aidanpieper.com/tags/</link>
+    <link>https://www.aidanpieper.com/tags/</link>
     <description>Recent content in Tags on 🚲 Aidan Pieper</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright © 2021, Aidan Pieper.</copyright><atom:link href="www.aidanpieper.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2021, Aidan Pieper.</copyright><atom:link href="https://www.aidanpieper.com/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

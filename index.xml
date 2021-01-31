@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>🚲 Aidan Pieper</title>
-    <link>www.aidanpieper.com/</link>
+    <link>https://www.aidanpieper.com/</link>
     <description>Recent content on 🚲 Aidan Pieper</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2021, Aidan Pieper.</copyright>
-    <lastBuildDate>Sat, 30 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="www.aidanpieper.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.aidanpieper.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello, Internet!</title>
-      <link>www.aidanpieper.com/blog/hello-internet/</link>
+      <link>https://www.aidanpieper.com/blog/hello-internet/</link>
       <pubDate>Sat, 30 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>www.aidanpieper.com/blog/hello-internet/</guid>
+      <guid>https://www.aidanpieper.com/blog/hello-internet/</guid>
       <description>This is my first test blog post! It is about time I had a personal site. This blog and site was set up with Hugo, a static site generator.
 This site theme is a slightly modified version of Hugo ʕ•ᴥ•ʔ Bear.</description>
     </item>
