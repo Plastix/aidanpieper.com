@@ -1,4 +1,4 @@
-baseURL = "http://aidanpieper.com/"
+baseURL = "www.aidanpieper.com"
 theme = "hugo-bearblog"
 
 title = "🚲 Aidan Pieper"
