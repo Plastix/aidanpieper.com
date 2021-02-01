@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on 🚲 Aidan Pieper</title>
-    <link>https://www.aidanpieper.com/blog/</link>
-    <description>Recent content in Blogs on 🚲 Aidan Pieper</description>
+    <title>kotlin on 🚲 Aidan Pieper</title>
+    <link>https://www.aidanpieper.com/tags/kotlin/</link>
+    <description>Recent content in kotlin on 🚲 Aidan Pieper</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2021, Aidan Pieper.</copyright>
-    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.aidanpieper.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.aidanpieper.com/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Beware Kotlin&#39;s Hidden Localization</title>
       <link>https://www.aidanpieper.com/blog/kotlin-hidden-localization/</link>
@@ -16,16 +16,6 @@
       <guid>https://www.aidanpieper.com/blog/kotlin-hidden-localization/</guid>
       <description>Recently, I had a fun bug at work which ultimately stemmed from a very simple problem — hidden localization. I needed to interpolate a String in Kotlin but didn&amp;rsquo;t want to use Kotlin&amp;rsquo;s string literal interpolation feature.1 Therefore I opted for Java&amp;rsquo;s String.format method; Kotlin provides a handy fun String.format(vararg args: Any?): String extension for this.
 val string = &amp;#34;%d dollars&amp;#34;.format(2) println(string) // Prints &amp;#34;2 dollars&amp;#34; as expected However, I had missed an important part of the documentation:</description>
-    </item>
-    
-    <item>
-      <title>Hello, Internet!</title>
-      <link>https://www.aidanpieper.com/blog/hello-internet/</link>
-      <pubDate>Sat, 30 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aidanpieper.com/blog/hello-internet/</guid>
-      <description>This is my first test blog post! It is about time I had a personal site. This blog and site was set up with Hugo, a static site generator.
-This site theme is a slightly modified version of Hugo ʕ•ᴥ•ʔ Bear.</description>
     </item>
     
   </channel>

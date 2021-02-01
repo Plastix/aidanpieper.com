@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Beware Kotlin&#39;s Hidden Localization | 🚲 Aidan Pieper</title>
+<meta name="title" content="Beware Kotlin&#39;s Hidden Localization" />
+<meta name="description" content="A tale of string localization and formatting in Kotlin" />
+<meta name="keywords" content="kotlin," />
+
+
+<meta property="og:title" content="Beware Kotlin&#39;s Hidden Localization" />
+<meta property="og:description" content="A tale of string localization and formatting in Kotlin" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.aidanpieper.com/blog/kotlin-hidden-localization/" />
+<meta property="article:published_time" content="2021-01-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-31T00:00:00+00:00" /><meta property="og:site_name" content="🚲 Aidan Pieper" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Beware Kotlin&#39;s Hidden Localization"/>
+<meta name="twitter:description" content="A tale of string localization and formatting in Kotlin"/>
+
+
+
+<meta itemprop="name" content="Beware Kotlin&#39;s Hidden Localization">
+<meta itemprop="description" content="A tale of string localization and formatting in Kotlin">
+<meta itemprop="datePublished" content="2021-01-31T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-01-31T00:00:00+00:00" />
+<meta itemprop="wordCount" content="203">
+
+
+
+<meta itemprop="keywords" content="kotlin," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: avenir next, avenir, san-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+    font-size: 18px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 14px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>🚲 Aidan Pieper</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Beware Kotlin&#39;s Hidden Localization</h1>
+<p>
+  <i>
+    <time datetime='2021-01-31' pubdate>
+      31 Jan, 2021
+    </time>
+  </i>
+</p>
+
+<content>
+  <p>Recently, I had a fun bug at work which ultimately stemmed from a very simple problem — hidden localization. I needed to interpolate a String in Kotlin but didn&rsquo;t want to use Kotlin&rsquo;s string literal interpolation feature.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Therefore I opted for Java&rsquo;s <code>String.format</code> method; Kotlin provides a handy <code>fun String.format(vararg args: Any?): String</code> extension for this.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#000;font-weight:bold">val</span> string = <span style="color:#d14">&#34;%d dollars&#34;</span>.format(<span style="color:#099">2</span>)
+println(string) <span style="color:#998;font-style:italic">// Prints &#34;2 dollars&#34; as expected
+</span></code></pre></div><p>However, I had missed an important part of <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/format.html#format">the documentation</a>:</p>
+<blockquote>
+<p>Uses this string as a format string and returns a string obtained by substituting the specified arguments, using the <strong>default locale</strong>.</p>
+</blockquote>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">Locale.setDefault(Locale(<span style="color:#d14">&#34;ar&#34;</span>)) <span style="color:#998;font-style:italic">// Set locale to Arabic
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">val</span> string = <span style="color:#d14">&#34;%d dollars&#34;</span>.format(<span style="color:#099">2</span>)
+println(string) <span style="color:#998;font-style:italic">// Prints &#34;٢ dollars&#34;
+</span></code></pre></div><p>I had forgotten that some languages have non-latin numerals! This caused a bug in some other code that expected latin numerals. The fix is trivial to tell Kotlin to not use any localization:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">Locale.setDefault(Locale(<span style="color:#d14">&#34;ar&#34;</span>)) <span style="color:#998;font-style:italic">// Set locale to arabic
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">val</span> string = <span style="color:#d14">&#34;%d dollars&#34;</span>.format(<span style="color:#099">2</span>, <span style="color:#000;font-weight:bold">null</span>) <span style="color:#998;font-style:italic">// Format without localization
+</span><span style="color:#998;font-style:italic"></span>println(string) <span style="color:#998;font-style:italic">// Prints &#34;2 dollars&#34; as expected
+</span></code></pre></div><p>Next time you reach for Kotlin&rsquo;s <code>String.format</code>, make sure you double check whether you need localization or not!</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>In hindsight, I&rsquo;m not sure why I didn&rsquo;t just use string literal interpolation. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+</content>
+<p>
+  
+  <a href="https://www.aidanpieper.com/tags/kotlin/">#kotlin</a>
+  
+</p>
+
+  </main>
+  <footer></footer>
+
+    
+</body>
+
+</html>

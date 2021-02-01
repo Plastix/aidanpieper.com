@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2021, Aidan Pieper.</copyright>
-    <lastBuildDate>Sat, 30 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.aidanpieper.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.aidanpieper.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beware Kotlin&#39;s Hidden Localization</title>
+      <link>https://www.aidanpieper.com/blog/kotlin-hidden-localization/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aidanpieper.com/blog/kotlin-hidden-localization/</guid>
+      <description>Recently, I had a fun bug at work which ultimately stemmed from a very simple problem — hidden localization. I needed to interpolate a String in Kotlin but didn&amp;rsquo;t want to use Kotlin&amp;rsquo;s string literal interpolation feature.1 Therefore I opted for Java&amp;rsquo;s String.format method; Kotlin provides a handy fun String.format(vararg args: Any?): String extension for this.
+val string = &amp;#34;%d dollars&amp;#34;.format(2) println(string) // Prints &amp;#34;2 dollars&amp;#34; as expected However, I had missed an important part of the documentation:</description>
+    </item>
+    
     <item>
       <title>Hello, Internet!</title>
       <link>https://www.aidanpieper.com/blog/hello-internet/</link>
