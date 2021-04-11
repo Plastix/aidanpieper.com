@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2021, Aidan Pieper.</copyright>
-    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.aidanpieper.com/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.aidanpieper.com/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beginning with Jetpack Compose (Beta)</title>
+      <link>https://www.aidanpieper.com/blog/beginning-with-jetpack-compose-beta/</link>
+      <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aidanpieper.com/blog/beginning-with-jetpack-compose-beta/</guid>
+      <description>TL;DR Compose is a pretty great UI framework and you should try it out. However, it still has some teething pains in beta!
+ I&amp;rsquo;ll be the first to admit that I&amp;rsquo;ve been pretty slow to adopt many of the libraries in Android&amp;rsquo;s first party Jetpack suite. Today, I want to talk about my initial thoughts with Jetpack Compose, Android&amp;rsquo;s new declaritve UI toolkit which went into Beta a few weeks ago.</description>
+    </item>
+    
     <item>
       <title>Beware Kotlin&#39;s Hidden Localization</title>
       <link>https://www.aidanpieper.com/blog/kotlin-hidden-localization/</link>
