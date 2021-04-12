@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2021, Aidan Pieper.</copyright>
-    <lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.aidanpieper.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.aidanpieper.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jetpack Compose Arrangement: A Visual Guide </title>
+      <link>https://www.aidanpieper.com/blog/jetpack-compose-arrangement-guide/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aidanpieper.com/blog/jetpack-compose-arrangement-guide/</guid>
+      <description>One of my favorite blog posts is Amanda Hill&amp;rsquo;s Android ImageView ScaleType: A Visual Guide. For some reason, I can never remember Android&amp;rsquo;s different image scaling modes and a visual reference guide really works for me.
+This post takes inspiration from Amanda and does the same thing but for Jetpack Compose&amp;rsquo;s Arrangement property.1
+↔️ Row SpaceEvenly SpaceBetweenSpaceAround ↕️ Column    SpaceEvenly SpaceBetween SpaceAround           Descriptions SpaceEvenly  Place children such that they are spaced evenly across the main axis, including free space before the first child and after the last child.</description>
+    </item>
+    
     <item>
       <title>Beginning with Jetpack Compose (Beta)</title>
       <link>https://www.aidanpieper.com/blog/beginning-with-jetpack-compose-beta/</link>
