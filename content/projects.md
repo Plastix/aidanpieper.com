@@ -7,7 +7,7 @@ menu: "main"
 
 ### [Buzz](https://github.com/Plastix/Buzz)
 {{< img src="/images/projects/buzz.png" width="80" height="80" >}} 
-A spelling bee game for Android inspired by the New York Times game. Built with Jetpack Compose and other modern Android development tools.[^modern-android-2021] Coming soon to the Google Play Store!
+A spelling bee game for Android inspired by the New York Times game. Built with Jetpack Compose and other modern Android development tools.[^modern-android-2021] Download it on the [Google Play Store](https://play.google.com/store/apps/details?id=io.github.plastix.buzz)!
 
 ### [Forage](https://github.com/Plastix/Forage)
 {{< img src="/images/projects/forage.png" width="80" height="80" >}}
